@@ -18,6 +18,7 @@ export default function SignIn() {
   state.auth because we call auth the reducer in the index
   */
   const loggedIn = useSelector(state => state.auth.loggedIn)
+  // Instead of useHistory
   const navigate = useNavigate();
 
   useEffect(() =>{

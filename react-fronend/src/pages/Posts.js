@@ -18,17 +18,17 @@ export default function Posts() {
       console.error(err);
       setFeching(false);
     })
-  }, [/* Only one call */])
+  }, [/* Only one call */]);
 
   return (
     <div>
       <div className='jumbotron container-fluid bg-dark text-light p-2'>
         <div className="container bg-dark p-5">
-          <h1 className="display-4">Last public posts</h1>
+          <h1>Last public posts</h1>
         </div>
       </div>
 
-      <hr class="my-4" />
+      <hr className="my-4" />
 
       <div>
         {posts.map(post => <Post key={post.postId} post={post}></Post>)}
