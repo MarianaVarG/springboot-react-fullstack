@@ -14,6 +14,13 @@ import PrivateRoute from "./utils/PrivateRoute";
 import UserPosts from "./pages/UserPosts";
 import SignUp from "./pages/SingUp";
 
+/**
+ * Moment config
+ */
+import moment from "moment";
+import 'moment/locale/es'
+moment.locale('es')
+
 checkForToken();
 
 function App() {
