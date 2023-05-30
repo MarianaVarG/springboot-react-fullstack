@@ -11,7 +11,7 @@ export default function NewPostForm({ errors, onSubmitCallback, postTitle = "", 
 
     // Function used when submitting the form
     const submitForm = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         // Send email and password to the father
         onSubmitCallback({ title, content, expirationTime, exposureId });
     }
@@ -42,7 +42,7 @@ export default function NewPostForm({ errors, onSubmitCallback, postTitle = "", 
                         <Form.Label>Expiration time</Form.Label>
 
                         <Form.Control
-                            disabled={ exposureId === exposures.PRIVATE }
+                            disabled={exposureId === exposures.PRIVATE}
                             as='select'
                             value={expirationTime}
                             onChange={(e) => setExpirationTime(e.target.value)}
@@ -66,7 +66,7 @@ export default function NewPostForm({ errors, onSubmitCallback, postTitle = "", 
                         <div>
                             <Form.Check
                                 onChange={() => setExposureId(exposures.PRIVATE)}
-                                checked={ exposureId === exposures.PRIVATE }
+                                checked={exposureId === exposures.PRIVATE}
                                 inline
                                 label="Private"
                                 name="exposureId"
@@ -75,7 +75,7 @@ export default function NewPostForm({ errors, onSubmitCallback, postTitle = "", 
                             />
                             <Form.Check
                                 onChange={() => setExposureId(exposures.PUBLIC)}
-                                checked={ exposureId === exposures.PUBLIC }
+                                checked={exposureId === exposures.PUBLIC}
                                 inline
                                 label="Public"
                                 name="exposureId"
@@ -111,7 +111,7 @@ export default function NewPostForm({ errors, onSubmitCallback, postTitle = "", 
 
             <div className="d-grid">
                 <Button variant="outline-success" type="submit">
-                    { textButton }
+                    {textButton}
                 </Button>
             </div>
         </Form>

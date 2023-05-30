@@ -3,10 +3,9 @@ import validator from 'validator';
 
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import SignUpForm from '../components/forms/SingUpForm';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { isObjectEmpty } from '../helpers/helpers';
-import { useNavigate } from 'react-router-dom';
 
 import { registerUser, loginUser } from '../actions/authActions';
 
@@ -50,15 +49,15 @@ export default function SignUp() {
 
         // Call us login function that we create on authActions
         dispatch(registerUser({ email, password, firstName, lastName }))
-             .then(response => {
+            .then(response => {
                 // Valid reponse: loggin user
                 dispatch(loginUser({ email, password }))
-             })
-             .catch(err => {
-                 // Error messages when user is not logged
-                 setErrors({ registerError: err.response.data.message });
-                 console.log(err.response.data.message);
-             });
+            })
+            .catch(err => {
+                // Error messages when user is not logged
+                setErrors({ registerError: err.response.data.message });
+                console.log(err.response.data.message);
+            });
     }
 
 

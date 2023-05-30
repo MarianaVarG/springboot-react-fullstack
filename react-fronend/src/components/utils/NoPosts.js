@@ -8,7 +8,7 @@ export default function NoPosts({ text }) {
                 <object type='image/svg+xml' data={empty}>
                     Error to up svg
                 </object>
-                <p>{ text }</p>
+                <p>{text}</p>
             </div>
         </div>
     )

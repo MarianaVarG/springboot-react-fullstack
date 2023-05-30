@@ -11,11 +11,11 @@ export const loginUser = (userData) => dispatch => {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
         }).then(response => {
             // Petitions is resolved
-            const { authorization, userId } = response.headers;
+            const { authorization } = response.headers;
             localStorage.setItem("jwtToken", authorization);
 
             // Function to add axios token
-            setAuthToken(authorization)
+            setAuthToken(authorization);
 
             // Decode token from clien side
             const decode = jwt_decode(authorization);

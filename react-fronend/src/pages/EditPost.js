@@ -91,8 +91,6 @@ export default function EditPost() {
                                 postExpirationTime={post.expirationTime}
                                 textButton='Edit post '
                             />}
-
-
                         </Card.Body>
                     </Card>
                 </Col>

@@ -31,10 +31,10 @@ export default function Posts() {
       </div>
 
       <hr className="my-4" />
-      
-      { fetching && <Placeholder /> }
-      { !fetching && posts.length === 0 && <NoPosts text={'No public posts avalilables'}/>}
-  
+
+      {fetching && <Placeholder />}
+      {!fetching && posts.length === 0 && <NoPosts text={'No public posts avalilables'} />}
+
       <div>
         {posts.map(post => <PublicPost key={post.postId} post={post}></PublicPost>)}
       </div>

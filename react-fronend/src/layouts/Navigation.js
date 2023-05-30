@@ -15,14 +15,13 @@ export default function Navigation() {
         <Navbar.Brand as={NavLink} to={"/"}>
           React Java
         </Navbar.Brand>
-
-          
-            {/* If user is not logged or is it */}
-            {!loggedIn ? (
-              <NavbarAnonymous />
-            ) : (
-              <NavbarLogged />
-            )}
+        
+        {/* If user is not logged or is it */}
+        {!loggedIn ? (
+          <NavbarAnonymous />
+        ) : (
+          <NavbarLogged />
+        )}
       </Container>
     </Navbar>
   );

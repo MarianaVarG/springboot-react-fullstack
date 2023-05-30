@@ -20,7 +20,7 @@ export default function SignInForm({ errors, onSubmitCallback }) {
             <Form.Group controlId="email" className="mb-3">
                 <Form.Label>Email</Form.Label>
 
-                <Form.Control 
+                <Form.Control
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -36,7 +36,7 @@ export default function SignInForm({ errors, onSubmitCallback }) {
             <Form.Group controlId="password" className="mb-3">
                 <Form.Label>Password</Form.Label>
 
-                <Form.Control 
+                <Form.Control
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

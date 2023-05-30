@@ -8,7 +8,6 @@ import { toast } from 'react-toastify';
 import NoPosts from '../components/utils/NoPosts';
 
 export default function UserPosts() {
-  // const [posts, setPosts] = useState([]); // Posts array
   const [fetching, setFeching] = useState(true); // Whene get data from our API - false means we finish
   const fetched = useSelector(state => state.posts.fetched);
   const posts = useSelector(state => state.posts.posts);
@@ -49,8 +48,8 @@ export default function UserPosts() {
 
       <hr className="my-4" />
 
-      { !fetched && <Placeholder /> }
-      { !fetching && posts.length === 0 && <NoPosts  text={'No posts avalilables'}/>}
+      {!fetched && <Placeholder />}
+      {!fetching && posts.length === 0 && <NoPosts text={'No posts avalilables'} />}
 
       <div>
         {posts.map(post => <PrivatePost key={post.postId} post={post}></PrivatePost>)}

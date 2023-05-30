@@ -57,11 +57,11 @@ export default function DeletePostsButton({ postId, title }) {
     }
 
     return (
-        <Button 
-        variant='danger' 
-        size='sm' 
-        className="d-flex align-items-center"
-        onClick={ createAlert }>
+        <Button
+            variant='danger'
+            size='sm'
+            className="d-flex align-items-center"
+            onClick={createAlert}>
             <RiDeleteBin6Line className='me-1' /> Delete
         </Button>
     )

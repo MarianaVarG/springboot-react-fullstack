@@ -3,11 +3,9 @@ import validator from 'validator';
 
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import SignInForm from '../components/forms/SingInForm';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { isObjectEmpty } from '../helpers/helpers';
-import { useNavigate } from 'react-router-dom';
-
 import { loginUser } from '../actions/authActions';
 
 export default function SignIn() {
@@ -21,7 +19,7 @@ export default function SignIn() {
   // Instead of useHistory
   const navigate = useNavigate();
 
-  useEffect(() =>{
+  useEffect(() => {
     // Mount de component
     if (loggedIn) {
       // Redirect to main page
@@ -29,7 +27,7 @@ export default function SignIn() {
     }
   });
 
-  const login = ({email, password}) => {
+  const login = ({ email, password }) => {
     const errors = {};
     // Validate fields
     if (!validator.isEmail(email)) {
@@ -44,14 +42,14 @@ export default function SignIn() {
     }
 
     // Call us login function that we create on authActions
-    dispatch(loginUser({email, password}))
-    .then(response =>{
+    dispatch(loginUser({ email, password }))
+      .then(response => {
 
-    })
-    .catch(err =>{
-      // Error messages when user is not logged
-      setErrors({ auth: "Cannot log in with these credentials" });
-    });
+      })
+      .catch(err => {
+        // Error messages when user is not logged
+        setErrors({ auth: "Cannot log in with these credentials" });
+      });
   }
 
 
@@ -59,10 +57,10 @@ export default function SignIn() {
     // Margin-Top = 5
     <Container className='mt-5'>
       <Row>
-        <Col sm='12' md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}}>
+        <Col sm='12' md={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
           <Card className='shadow'>
             <Card.Body>
-              {errors.auth && <Alert variant='danger'>{ errors.auth }</Alert>}
+              {errors.auth && <Alert variant='danger'>{errors.auth}</Alert>}
 
               <h3 className='fw-bold mb-2 text-uppercase'>Login</h3>
               <hr></hr>
