@@ -7,14 +7,13 @@ export default function authStates(state = initialState, action) {
     // Const to get type action and data to send 
     const { type, payload } = action;
 
-    switch (type) {
-        case SET_CURRENT_USER:
-            return {
-                ...state,
-                loggedIn: payload.loggedIn,
-                user: payload.user
-            }
-        default:
-            return state;
+    if (type === SET_CURRENT_USER) {
+        return {
+            ...state,
+            loggedIn: payload.loggedIn,
+            user: payload.user
+        }
+    } else {
+        return state;
     }
 }

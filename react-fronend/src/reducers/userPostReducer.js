@@ -7,14 +7,13 @@ export default function authStates(state = initialState, action) {
     // Const to get type action and data to send 
     const { type, payload } = action;
 
-    switch (type) {
-        case SET_USER_POST:
-            return {
-                ...state,
-                fetched: payload.fetched,
-                posts: payload.posts
-            }
-        default:
-            return state;
+    if (type === SET_USER_POST) {
+        return {
+            ...state,
+            fetched: payload.fetched,
+            posts: payload.posts
+        }
+    } else { 
+        return state;
     }
 }
