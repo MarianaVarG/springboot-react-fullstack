@@ -2,7 +2,9 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 import { PUBLIC_POSTS_ENDPOINT } from '../helpers/endpoints';
-import Post from '../components/posts/Post';
+import PublicPost from '../components/posts/PublicPost';
+import Placeholder from '../components/utils/Placeholder';
+import NoPosts from '../components/utils/NoPosts';
 
 export default function Posts() {
   const [posts, setPosts] = useState([]); // Posts array
@@ -29,9 +31,12 @@ export default function Posts() {
       </div>
 
       <hr className="my-4" />
-
+      
+      { fetching && <Placeholder /> }
+      { !fetching && posts.length === 0 && <NoPosts text={'No public posts avalilables'}/>}
+  
       <div>
-        {posts.map(post => <Post key={post.postId} post={post}></Post>)}
+        {posts.map(post => <PublicPost key={post.postId} post={post}></PublicPost>)}
       </div>
     </div>
   )

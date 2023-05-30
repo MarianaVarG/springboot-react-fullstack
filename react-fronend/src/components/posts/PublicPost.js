@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import moment from 'moment/moment';
 
-export default function Post({ post }) {
+export default function PublicPost({ post }) {
   return (
     <Card className='mb-4'>
       {/* to pass a parameter use ` */}

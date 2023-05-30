@@ -16,7 +16,7 @@ export default function NavbarLogged() {
 
                 <Navbar.Collapse id="main-menu">
                     <Nav className="me-auto">
-                        <Nav.Link>Create Post</Nav.Link>
+                        <Nav.Link as={NavLink} to={'/newpost'}>Create Post</Nav.Link>
                     </Nav>
 
                     <Nav className="justify-content-end">
